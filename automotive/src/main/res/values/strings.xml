@@ -1,3 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Project</string>
+
+    <!-- Activity Titles -->
+    <string name="settings_title">Settings</string>
+    <string name="main_title">Climate Control</string>
+
+    <!-- Settings Strings -->
+    <string name="profile_settings">Profile Settings</string>
+    <string name="general_settings">General Settings</string>
+    <string name="schedule_settings">Schedule Settings</string>
+    <string name="system_information">System Information</string>
+    <string name="system_diagnostics">System Diagnostics</string>
+
+    <!-- Profile Strings -->
+    <string name="current_profile">Current: %s</string>
+    <string name="select_profile">Select Profile:</string>
+    <string name="create_custom_profile">Create Custom Profile:</string>
+    <string name="profile_name_hint">Enter profile name</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="delete_profile">Delete Profile</string>
+
+    <!-- Switch Labels -->
+    <string name="auto_start">Auto Start</string>
+    <string name="sound_feedback">Sound Feedback</string>
+    <string name="enable_schedule">Enable Schedule</string>
+    <string name="maintenance_reminders">Maintenance Reminders</string>
+    <string name="energy_saving_mode">Energy Saving Mode</string>
+
+    <!-- Spinner Labels -->
+    <string name="temperature_unit">Temperature Unit:</string>
+    <string name="theme">Theme:</string>
+
+    <!-- Button Labels -->
+    <string name="back">← Back</string>
+    <string name="reset">Reset</string>
+    <string name="configure_schedule">Configure Schedule</string>
+    <string name="run_diagnostics">Run Diagnostics</string>
+    <string name="export_data">Export Data</string>
+    <string name="running">Running...</string>
+
+    <!-- Dialog Strings -->
+    <string name="schedule_settings_dialog">Schedule Settings</string>
+    <string name="schedule_time">Schedule Time</string>
+    <string name="target_temperature">Target Temperature</string>
+    <string name="temperature_range">Range: 16°C - 30°C</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+
+    <!-- Reset Dialog -->
+    <string name="reset_settings">Reset Settings</string>
+    <string name="reset_confirmation">Are you sure you want to reset all settings to default values?</string>
+
+    <!-- Export Dialog -->
+    <string name="export_data_dialog">Export Data</string>
+    <string name="export_success">User data and settings have been exported to:\n%s</string>
+
+    <!-- Diagnostic Results -->
+    <string name="diagnostic_results">Diagnostic Results</string>
+    <string name="system_status_healthy">System Status: ✓ Healthy</string>
+    <string name="temperature_sensors_ok">Temperature Sensors: ✓ OK</string>
+    <string name="fan_motor_ok">Fan Motor: ✓ OK</string>
+    <string name="ac_compressor_ok">AC Compressor: ✓ OK</string>
+    <string name="power_supply_ok">Power Supply: ✓ OK</string>
+    <string name="communication_ok">Communication: ✓ OK</string>
+    <string name="recommendations">Recommendations:</string>
+    <string name="next_maintenance">• Next maintenance due in 45 days</string>
+    <string name="filter_replacement">• Filter replacement recommended</string>
+    <string name="system_performance">• System performance: 94%</string>
+
+    <!-- Status Messages -->
+    <string name="schedule_disabled">Schedule disabled</string>
+    <string name="next_activation">Next activation: %1$s at %2$d°C</string>
+    <string name="system_version">Version: %s</string>
+    <string name="last_maintenance">Last maintenance: %s</string>
+    <string name="system_uptime">System uptime: %s</string>
+    <string name="total_usage">Total usage: %s</string>
+    <string name="energy_efficiency">Energy efficiency: %s</string>
+
+    <!-- Toast Messages -->
+    <string name="profile_changed">Profile changed to: %s</string>
+    <string name="auto_start_enabled">Auto-start enabled</string>
+    <string name="auto_start_disabled">Auto-start disabled</string>
+    <string name="sound_feedback_enabled">Sound feedback enabled</string>
+    <string name="sound_feedback_disabled">Sound feedback disabled</string>
+    <string name="maintenance_reminders_enabled">Maintenance reminders enabled</string>
+    <string name="maintenance_reminders_disabled">Maintenance reminders disabled</string>
+    <string name="energy_saving_enabled">Energy saving mode enabled</string>
+    <string name="energy_saving_disabled">Energy saving mode disabled</string>
+    <string name="theme_changed">Theme changed to: %s</string>
+    <string name="temperature_unit_changed">Temperature unit changed to: %s</string>
+    <string name="custom_profile_saved">Custom profile \'%s\' saved successfully</string>
+    <string name="custom_profile_deleted">Custom profile deleted</string>
+    <string name="schedule_updated">Schedule updated</string>
+    <string name="settings_reset">All settings reset to default</string>
+    <string name="data_exported">Data exported successfully</string>
+    <string name="enter_profile_name">Please enter a profile name</string>
+
+    <!-- Profile Messages -->
+    <string name="eco_profile_message">Eco profile: Energy saving enabled, limited power usage</string>
+    <string name="comfort_profile_message">Comfort profile: Auto-start enabled, balanced settings</string>
+    <string name="performance_profile_message">Performance profile: Maximum performance, higher power usage</string>
+    <string name="custom_profile_message">Custom profile: User-defined settings</string>
+    <string name="default_profile_message">Default profile: Standard settings</string>
+
+    <!-- Diagnostic Process -->
+    <string name="diagnostic_description">Run comprehensive system diagnostics to check all components and performance metrics.</string>
+
+    <!-- Arrays -->
+    <string-array name="profile_names">
+        <item>Default</item>
+        <item>Eco</item>
+        <item>Comfort</item>
+        <item>Performance</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string-array name="temperature_units">
+        <item>Celsius (°C)</item>
+        <item>Fahrenheit (°F)</item>
+    </string-array>
+
+    <string-array name="themes">
+        <item>Dark</item>
+        <item>Light</item>
+        <item>Auto</item>
+    </string-array>
 </resources>

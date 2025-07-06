@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Schedule Time"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        android:layout_marginBottom="8dp" />
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Target Temperature"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/scheduleTemperatureText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="22°C"
+        android:textSize="18sp"
+        android:textColor="@color/accent_color"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <SeekBar
+        android:id="@+id/scheduleTemperatureSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:min="16"
+        android:max="30"
+        android:progress="22"
+        android:progressTint="@color/accent_color"
+        android:thumbTint="@color/accent_color"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Range: 16°C - 30°C"
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary"
+        android:gravity="center" />
+
+</LinearLayout>
