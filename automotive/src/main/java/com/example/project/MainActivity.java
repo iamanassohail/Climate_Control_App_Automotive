@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import androidx.core.content.ContextCompat;
+import android.graphics.Color;
 
 public class MainActivity extends AppCompatActivity {
     // UI Components
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button presetCoolBtn, presetWarmBtn;
 
     // State variables
-    private String currentZone = "Driver";
+    private String currentZone = "";
     private Handler timeHandler;
     private Runnable timeRunnable;
     private boolean isAutoModeActive = false;
@@ -218,30 +220,45 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateZoneButtons() {
-        // Reset all buttons to default color
-        int defaultColor = getResources().getColor(android.R.color.darker_gray);
-        int selectedColor = getResources().getColor(android.R.color.holo_green_dark);
+        // Use proper color resources with ContextCompat for better compatibility
+        int defaultColor = ContextCompat.getColor(this, R.color.button_default);
+        int selectedColor = ContextCompat.getColor(this, R.color.button_selected);
 
-        driverZoneBtn.setBackgroundColor(defaultColor);
-        passengerZoneBtn.setBackgroundColor(defaultColor);
-        rearZoneBtn.setBackgroundColor(defaultColor);
-        allZonesBtn.setBackgroundColor(defaultColor);
+        // Reset all buttons to default state
+        resetButtonToDefault(driverZoneBtn, defaultColor);
+        resetButtonToDefault(passengerZoneBtn, defaultColor);
+        resetButtonToDefault(rearZoneBtn, defaultColor);
+        resetButtonToDefault(allZonesBtn, defaultColor);
 
-        // Highlight selected zone
-        switch (currentZone) {
-            case "Driver":
-                driverZoneBtn.setBackgroundColor(selectedColor);
-                break;
-            case "Passenger":
-                passengerZoneBtn.setBackgroundColor(selectedColor);
-                break;
-            case "Rear":
-                rearZoneBtn.setBackgroundColor(selectedColor);
-                break;
-            case "All Zones":
-                allZonesBtn.setBackgroundColor(selectedColor);
-                break;
+        // Only highlight if a zone is actually selected
+        if (!currentZone.isEmpty()) {
+            switch (currentZone) {
+                case "Driver":
+                    setButtonSelected(driverZoneBtn, selectedColor);
+                    break;
+                case "Passenger":
+                    setButtonSelected(passengerZoneBtn, selectedColor);
+                    break;
+                case "Rear":
+                    setButtonSelected(rearZoneBtn, selectedColor);
+                    break;
+                case "All Zones":
+                    setButtonSelected(allZonesBtn, selectedColor);
+                    break;
+            }
         }
+    }
+
+    private void resetButtonToDefault(Button button, int defaultColor) {
+        button.setBackgroundColor(defaultColor);
+        button.setTextColor(Color.WHITE);
+        button.setAlpha(0.7f); // Make unselected buttons slightly transparent
+    }
+
+    private void setButtonSelected(Button button, int selectedColor) {
+        button.setBackgroundColor(selectedColor);
+        button.setTextColor(Color.WHITE);
+        button.setAlpha(1.0f); // Make selected button fully opaque
     }
 
     private void applyCoolPreset() {

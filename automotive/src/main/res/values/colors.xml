@@ -36,4 +36,7 @@
     <!-- Transparency -->
     <color name="overlay_dark">#80000000</color>
     <color name="overlay_light">#80FFFFFF</color>
+
+    <color name="button_default">#666666</color>
+    <color name="button_selected">#4CAF50</color>
 </resources>
