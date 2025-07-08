@@ -43,7 +43,7 @@ dependencies {
 
     // Unit testing
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.robolectric:robolectric:4.8.1")
+    testImplementation("org.robolectric:robolectric:4.15.1")
     testImplementation("org.mockito:mockito-core:3.12.4")
 
     // Instrumented testing

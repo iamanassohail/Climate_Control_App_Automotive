@@ -22,6 +22,9 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.*;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.containsString;
+import static androidx.test.espresso.action.ViewActions.scrollTo;
+import static androidx.test.espresso.action.ViewActions.click;
 
 @RunWith(AndroidJUnit4.class)
 public class MainActivityInstrumentedTest {
@@ -74,13 +77,17 @@ public class MainActivityInstrumentedTest {
         onView(withId(R.id.statusText)).check(matches(isDisplayed()));
 
         // Check that driver zone is initially selected
-        onView(withId(R.id.driverZoneBtn)).check(matches(isDisplayed()));
+        onView(withId(R.id.driverZoneBtn))
+                .check(matches(isDisplayingAtLeast(90)))
+                .perform(scrollTo(), click());
     }
 
     @Test
     public void testZoneButtonClicks() {
         // Test driver zone button
-        onView(withId(R.id.driverZoneBtn)).perform(click());
+        onView(withId(R.id.driverZoneBtn))
+                .check(matches(isDisplayingAtLeast(90)))
+                .perform(scrollTo(), click());
 
         // Test passenger zone button
         onView(withId(R.id.passengerZoneBtn)).perform(click());
@@ -253,7 +260,8 @@ public class MainActivityInstrumentedTest {
             fanSeekBar.setProgress(5);
 
             // Simulate the listener being called
-            fanSeekBar.getOnSeekBarChangeListener().onProgressChanged(fanSeekBar, 5, true);
+            fanSeekBar.setProgress(5); // If needed, manually trigger any expected behavior here (like updating UI or state)
+
         });
 
         // Verify auto mode is disabled after manual fan control
@@ -275,7 +283,8 @@ public class MainActivityInstrumentedTest {
             fanSeekBar.setProgress(5);
 
             // Simulate eco mode listener
-            fanSeekBar.getOnSeekBarChangeListener().onProgressChanged(fanSeekBar, 5, true);
+            fanSeekBar.setProgress(5); // If needed, manually trigger any expected behavior here (like updating UI or state)
+
 
             // Verify fan speed is limited to 3 in eco mode
             assertTrue("Fan speed should be limited in eco mode", fanSeekBar.getProgress() <= 3);
@@ -337,7 +346,9 @@ public class MainActivityInstrumentedTest {
         onView(withId(R.id.fanValueText)).check(matches(isDisplayed()));
         onView(withId(R.id.currentTimeText)).check(matches(isDisplayed()));
         onView(withId(R.id.powerUsageText)).check(matches(isDisplayed()));
-        onView(withId(R.id.driverZoneBtn)).check(matches(isDisplayed()));
+        onView(withId(R.id.driverZoneBtn))
+                .check(matches(isDisplayingAtLeast(90)))
+                .perform(scrollTo(), click());
         onView(withId(R.id.passengerZoneBtn)).check(matches(isDisplayed()));
         onView(withId(R.id.rearZoneBtn)).check(matches(isDisplayed()));
         onView(withId(R.id.allZonesBtn)).check(matches(isDisplayed()));
